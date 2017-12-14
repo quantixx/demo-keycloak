@@ -1,0 +1,33 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "io.quantixx.isbn"
+    },
+    "jhipsterVersion": "4.13.0",
+    "baseName": "isbn",
+    "packageName": "io.quantixx.isbn",
+    "packageFolder": "io/quantixx/isbn",
+    "serverPort": "8082",
+    "authenticationType": "oauth2",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "0a2b9cd75983a8a8a28b15b703464c7f95e8bf75",
+    "enableTranslation": false,
+    "applicationType": "microservice",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "clientPackageManager": "yarn",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

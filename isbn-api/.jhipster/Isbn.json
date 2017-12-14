@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "isbnNumber",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171214115024",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "isbn",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "isbn",
+    "searchEngine": false
+}

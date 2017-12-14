@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "author",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isbn",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171214114832",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "book",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "microserviceName": "book",
+    "searchEngine": false
+}

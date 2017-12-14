@@ -1,0 +1,33 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "io.quantixx.book"
+    },
+    "jhipsterVersion": "4.13.0",
+    "baseName": "book",
+    "packageName": "io.quantixx.book",
+    "packageFolder": "io/quantixx/book",
+    "serverPort": "8081",
+    "authenticationType": "oauth2",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "bc9c15a19b67b5c7177b4ce265a6f0f5c49732f2",
+    "enableTranslation": false,
+    "applicationType": "microservice",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "clientPackageManager": "yarn",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
