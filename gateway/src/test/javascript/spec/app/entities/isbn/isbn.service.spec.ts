@@ -6,6 +6,7 @@ import { JhiDateUtils } from 'ng-jhipster';
 
 import { IsbnService } from '../../../../../../main/webapp/app/entities/isbn/isbn.service';
 import { Isbn } from '../../../../../../main/webapp/app/entities/isbn/isbn.model';
+import { SERVER_API_URL } from '../../../../../../main/webapp/app/app.constants';
 
 describe('Service Tests', () => {
 
@@ -42,7 +43,9 @@ describe('Service Tests', () => {
                 service.find(123).subscribe(() => {});
 
                 expect(this.lastConnection).toBeDefined();
-                expect(this.lastConnection.request.url).toEqual('api/isbns/' + 123);
+
+                const resourceUrl = SERVER_API_URL + '/isbn/api/isbns';
+                expect(this.lastConnection.request.url).toEqual(resourceUrl + '/' + 123);
             });
             it('should return Isbn', () => {
 

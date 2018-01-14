@@ -4,7 +4,7 @@
       "packageName": "io.quantixx.gateway",
       "microservicePath": "../isbn-api"
     },
-    "jhipsterVersion": "4.13.0",
+    "jhipsterVersion": "4.13.3",
     "baseName": "gateway",
     "packageName": "io.quantixx.gateway",
     "packageFolder": "io/quantixx/gateway",
@@ -28,6 +28,8 @@
     "applicationType": "gateway",
     "testFrameworks": [],
     "jhiPrefix": "jhi",
-    "enableTranslation": false
+    "enableTranslation": false,
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true
   }
 }

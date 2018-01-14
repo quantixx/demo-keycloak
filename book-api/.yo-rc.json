@@ -3,7 +3,7 @@
     "promptValues": {
       "packageName": "io.quantixx.book"
     },
-    "jhipsterVersion": "4.13.0",
+    "jhipsterVersion": "4.13.3",
     "baseName": "book",
     "packageName": "io.quantixx.book",
     "packageFolder": "io/quantixx/book",
@@ -28,6 +28,8 @@
     "jhiPrefix": "jhi",
     "clientPackageManager": "yarn",
     "skipClient": true,
-    "skipUserManagement": true
+    "skipUserManagement": true,
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true
   }
 }

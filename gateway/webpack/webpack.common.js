@@ -1,24 +1,15 @@
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StringReplacePlugin = require('string-replace-webpack-plugin');
+const rxPaths = require('rxjs/_esm5/path-mapping');
 
 const utils = require('./utils.js');
 
-module.exports = (options) => {
-    const DATAS = {
-        VERSION: `'${utils.parseVersion()}'`,
-        DEBUG_INFO_ENABLED: options.env === 'development',
-        // The root URL for API calls, ending with a '/' - for example: `"http://www.jhipster.tech:8081/myservice/"`.
-        // If this URL is left empty (""), then it will be relative to the current context.
-        // If you use an API server, in `prod` mode, you will need to enable CORS
-        // (see the `jhipster.cors` common JHipster property in the `application-*.yml` configurations)
-        SERVER_API_URL: `""`
-    };
-    return {
+module.exports = (options) => ({
         resolve: {
             extensions: ['.ts', '.js'],
-            modules: ['node_modules']
+        modules: ['node_modules'],
+        alias: rxPaths()
         },
         stats: {
             children: false
@@ -45,22 +36,21 @@ module.exports = (options) => {
                 {
                     test: /manifest.webapp$/,
                     loader: 'file-loader?name=manifest.webapp!web-app-manifest-loader'
-                },
-                {
-                    test: /app.constants.ts$/,
-                    loader: StringReplacePlugin.replace({
-                        replacements: [{
-                            pattern: /\/\* @toreplace (\w*?) \*\//ig,
-                            replacement: (match, p1, offset, string) => `_${p1} = ${DATAS[p1]};`
-                        }]
-                    })
                 }
             ]
         },
         plugins: [
             new webpack.DefinePlugin({
                 'process.env': {
-                    'NODE_ENV': JSON.stringify(options.env)
+                NODE_ENV: `'${options.env}'`,
+                BUILD_TIMESTAMP: `'${new Date().getTime()}'`,
+                VERSION: `'${utils.parseVersion()}'`,
+                DEBUG_INFO_ENABLED: options.env === 'development',
+                // The root URL for API calls, ending with a '/' - for example: `"http://www.jhipster.tech:8081/myservice/"`.
+                // If this URL is left empty (""), then it will be relative to the current context.
+                // If you use an API server, in `prod` mode, you will need to enable CORS
+                // (see the `jhipster.cors` common JHipster property in the `application-*.yml` configurations)
+                SERVER_API_URL: `''`
                 }
             }),
             new webpack.optimize.CommonsChunkPlugin({
@@ -104,8 +94,6 @@ module.exports = (options) => {
                 template: './src/main/webapp/index.html',
                 chunksSortMode: 'dependency',
                 inject: 'body'
-            }),
-            new StringReplacePlugin()
+        })
         ]
-    };
-};
+});

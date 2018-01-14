@@ -3,7 +3,7 @@
     "promptValues": {
       "packageName": "io.quantixx.isbn"
     },
-    "jhipsterVersion": "4.13.0",
+    "jhipsterVersion": "4.13.3",
     "baseName": "isbn",
     "packageName": "io.quantixx.isbn",
     "packageFolder": "io/quantixx/isbn",
@@ -28,6 +28,8 @@
     "jhiPrefix": "jhi",
     "clientPackageManager": "yarn",
     "skipClient": true,
-    "skipUserManagement": true
+    "skipUserManagement": true,
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true
   }
 }

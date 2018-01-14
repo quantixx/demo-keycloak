@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
+import { SERVER_API_URL } from '../../app.constants';
 
 import { Book } from './book.model';
 import { ResponseWrapper, createRequestOption } from '../../shared';
@@ -8,7 +9,7 @@ import { ResponseWrapper, createRequestOption } from '../../shared';
 @Injectable()
 export class BookService {
 
-    private resourceUrl = '/book/api/books';
+    private resourceUrl =  SERVER_API_URL + '/book/api/books';
 
     constructor(private http: Http) { }
 
